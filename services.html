@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustangs Veterinary Clinic | Services</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="karla.css">
+    <link rel="stylesheet" href="Sevillano_Styles.css">
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <!-- Additional CSS for Services Page -->
+    <style>
+	
+	   /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FAFAFF;
+            color: #1E2F23;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navbar Styling & Alignment */
+        .nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0 !important; /* Remove default margin */
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+}
+
+/* Ensure smooth transition */
+.dropdown-menu {
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+    visibility: hidden;
+}
+
+/* Remove unwanted space between the dropdown and its parent */
+.navbar .dropdown-menu {
+    margin: 0;
+    padding: 0.5rem 0;
+    border-radius: 8px;
+}
+
+/* Ensure the dropdown closes properly */
+.nav-item.dropdown:hover .dropdown-menu:hover {
+    display: block;
+}
+        .dropdown:hover .dropdown-menu, 
+        .nav-item.show .dropdown-menu {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+
+        /* Button Animation */
+        .btn-signup {
+            background-color: #6BF178;
+            color: #1E2F23;
+            font-weight: bold;
+            border-radius: 20px;
+            padding: 10px 20px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            white-space: nowrap;
+        }
+        .btn-signup:hover {
+            background-color: #0075A2;
+            color: #FAFAFF;
+            transform: scale(1.05);
+            box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Main Content Animation */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-in-out forwards 0.5s;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+		
+.service__flex {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.service__card div {
+  margin-bottom: 2rem;
+  margin-inline: auto;
+  width: 120px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #dff3fd;
+  border-radius: 100%;
+}
+
+.service__card img {
+  max-width: 45px;
+}
+
+.service__card p {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+		
+    </style>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 8px;">
+                <img src="media/logo.png" alt="Pet Shop" style="border-radius: 50%; width: 3rem; height: 3rem;">
+                <div class="d-flex flex-column">
+                    <span class="fw-bold text-white" style="font-size: 1.2rem; line-height: 1.1;">Mustangs Veterinary Clinic</span>
+                    <span class="text-white-50" style="font-size: 0.9rem; line-height: 1.1;">Noah's Ark - San Jose City</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto text-center">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">Our Story</a></li>
+                            <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                            <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="appointment.html">Appointment</a></li>                
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<br>
+    <!-- Services Header -->
+    <section class="service-header">
+        <div class="container">
+            <h1 class="display-4 fw-bold">What we can do for you</h1>
+            <p class="lead">Comprehensive Pet Care Services for a Lifetime of Health and Happiness</p>
+        </div>
+    </section>
+<br>
+<br>
+    <!-- Services Overview -->
+       <section class="section__container service__container" id="service">
+      
+        
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                  
+                    <p class="lead">At Mustangs Veterinary Clinic-Noah's Ark, we know your pets are more than just animals—they're family! That’s why we’re here to provide the best care possible, keeping them happy, healthy, and full of life. From regular check-ups and vaccinations to keep tails wagging, to deworming treatments that keep pesky parasites away, we’ve got your pet covered. Need a spa day? Our grooming services will have them looking and feeling their best. If your furry friend ever needs extra medical attention, our comfortable confinement facilities ensure they get the care they need. No matter what, we’re here to give your pets the love and expert care they deserve—because at Mustangs Veterinary Clinic-Noah’s Ark, we treat every pet like our own! 🐾 </p>
+                    
+
+	  
+      <div class="service__flex">
+        <div class="service__card">
+          <div>
+            <img src="images/service1.png" alt="service" />
+          </div>
+          <p>Consultation</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="images/service2.png" alt="service" />
+          </div>
+          <p>Vaccination Services</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="images/service3.png" alt="service" />
+          </div>
+          <p>Deworming</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="images/service4.png" alt="service" /> 
+          </div>
+          <p>Confinement</p>
+        </div>
+        <div class="service__card">
+          <div>
+            <img src="images/service5.png" alt="service" />
+          </div>
+          <p>Pet Grooming</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="images/surgery1.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery2.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery3.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery4.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery5.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery6.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery7.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery8.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery9.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery10.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/surgery11.jpg" alt="Surgery" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming1.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming2.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming3.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming4.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming5.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming6.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming7.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming8.jpg" alt="Grooming" class="img-fluid"></div>
+                <div class="gallery-item"><img src="images/grooming9.jpg" alt="Grooming" class="img-fluid"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer mt-5 p-3 text-center">
+        <p>&copy; 2025 Mustangs Veterinary Clinic | All Rights Reserved</p>
+        <p style="font-size: 10px;"> An ITS121 Project Requirement</p>
+        <p style="font-size: 10px;"> Sevillano | Nerizon | De Dios | Gomez | Villegas</p>
+    </footer>
+    </body>
+    </html>

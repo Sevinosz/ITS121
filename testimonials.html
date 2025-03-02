@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mustangs Veterinary Clinic - Testimonials</title>
+	
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+     
+	<!-- Custom Styles -->
+	<link rel="stylesheet" href="Sevillano_Styles.css">
+    
+	 <!-- FontAwesome for icons -->
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        .content-wrapper {
+            flex: 1;
+        }
+        
+        .testimonial-container {
+            background-color: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .testimonial-card {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+            text-align: center;
+            font-size: 18px;
+        }
+		
+		.testimonial-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 15px;
+        }
+
+        .stars {
+            color: #FFD700;
+            font-size: 1.3rem;
+        }
+        
+		.carousel-indicators {
+            margin-bottom: 0px;
+        }
+		
+        .carousel-control-prev {
+            left: -10px;
+        }
+
+        .carousel-control-next {
+            right: -10px;
+        }
+
+        .carousel-control-prev-icon, .carousel-control-next-icon {
+            filter: invert(1);
+        }
+
+        .carousel-indicators [data-bs-target] {
+            background-color: #0075A2;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+		<!-- Navbar Section -->
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 8px;">
+                    <img src="media/logo.png" alt="Pet Shop" style="border-radius: 50%; width: 3rem; height: 3rem;">
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold text-white" style="font-size: 1.2rem; line-height: 1.1;">Mustangs Veterinary Clinic</span>
+                        <span class="text-white-50" style="font-size: 0.9rem; line-height: 1.1;">Noah's Ark - San Jose City</span>
+                    </div>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="aboutDropdown" role="button" data-bs-toggle="dropdown">About</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="about.html">Our Story</a></li>
+                                <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                                <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="products.html">Shop</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contacts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="appointment.html">Appointment</a></li>                
+                    </ul>
+                </div>
+            </div>
+        </nav>
+		
+		<!-- Testimonial Section -->
+        <div class="container my-5">
+            <h1 class="text-center mb-4">This is What Our Clients Have to Say!</h1>
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2"></button>
+                    <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="3"></button>
+                </div>
+				
+				<!-- Carousel Items -->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="testimonial-container">
+                            <div class="testimonial-card">
+                                <div class="stars">★★★★★</div>
+                                <h5>“Incredible care for my dog!”</h5>
+                                <p>"They always go above and beyond in grooming my dog. Highly recommended!"</p>
+								<img src="Photos/dog/dog10.jpg" alt="Client 1" class="testimonial-image">
+								<p>- Tagapipi's fur parent, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="carousel-item">
+                        <div class="testimonial-container">
+                            <div class="testimonial-card">
+                                <div class="stars">★★★★★</div>
+                                <h5>“100% Vaccinated”</h5>
+                                <p>"The staff was so gentle with my puppy, and has been vaccinated to prevent dewormings and heartworm. I’ll definitely be coming back for all of her future check-ups."</p>
+								<img src="Photos/dog/dog13.jpg" alt="Client 2" class="testimonial-image">
+								<p>- Wan's fur parent, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="carousel-item">
+                        <div class="testimonial-container">
+                            <div class="testimonial-card">
+                                <div class="stars">★★★★★</div>
+                                <h5>“A lifesaver”</h5>
+                                <p>"This veterinary clinic is a lifesaver! My cat had pyometra and is needed to undergo surgery, and they handled it quickly and efficiently. I’m so grateful to the amazing staff here."</p>
+								<img src="Photos/cat/cat2.jpg" alt="Client 3" class="testimonial-image">
+								<p>- Chuckie's fur parent, 2024</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="carousel-item">
+                        <div class="testimonial-container">
+                            <div class="testimonial-card">
+                                <div class="stars">★★★★★</div>
+                                <h5>“Best veterinary clinic we’ve been to”</h5>
+                                <p>"My dog has Osteoarthritis, and Mustangs Veterinary Clinic are always giving their 100%. My dog just got her monthly dose of Liberla, and I am looking forward to going here until she recovers."</p>
+								<img src="Photos/dog/dog12.jpg" alt="Client 4" class="testimonial-image">
+								<p>- Maya's fur parent, 2024</p>
+							</div>
+                        </div>
+                    </div>
+                </div>
+				
+				<!-- Carousel Navigation -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+	
+	<!-- Footer Section -->
+    <footer class="footer mt-5 p-3 text-center">
+        <br>
+        <p>&copy; 2025 Mustangs Veterinary Clinic | All Rights Reserved</p>
+        <p style="font-size: 10px;"> An ITS121 Project Requirement</p>
+        <p style="font-size: 10px;"> Sevillano | Nerizon | De Dios | Gomez | Villegas</p>
+    </footer>
+</body>
+</html>

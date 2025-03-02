@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinic Gallery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Sevillano_Styles.css">
+    <link rel="stylesheet" href="karla.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <style>
+
+
+        .gallery-item {
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .gallery-item .text-container {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 5px;
+            color: white;
+            text-align: left;
+        }
+
+        .gallery-item h5 {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+
+        .gallery-item p {
+            font-size: 0.9rem;
+            margin: 5px 0 0;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .navbar .dropdown-toggle {
+            color: #000 !important; /* Black text */
+        }
+
+        /* Optional: Add hover effect */
+        .navbar .dropdown-toggle:hover {
+            color: #333 !important; /* Slightly lighter black */
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+          
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg ">
+    <div class="container d-flex justify-content-between align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="index.html" style="gap: 8px;">
+            <img src="Logo/vetlogobgremoved.png" alt="Pet Shop" style="border-radius: 50%; width: 3rem; height: 3rem;">
+            <div class="d-flex flex-column">
+                <span class="fw-bold text-white" style="font-size: 1.2rem; line-height: 1.2;">
+                    Mustangs Veterinary Clinic
+                </span>
+                <span class="text-white-50" style="font-size: 0.9rem; line-height: 1.1;">
+                    Noah's Ark - San Jose City
+                </span>
+            </div>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        About
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <li><a class="dropdown-item" href="about.html">Our Story</a></li>
+                        <li><a class="dropdown-item" href="gallery.html">Gallery</a></li>
+                        <li><a class="dropdown-item" href="testimonials.html">Testimonials</a></li>
+                    </ul>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="services.html">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="products.html">Shop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contacts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="appointment.html">Appointment</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <h1 class="text-center">Our Clinic Gallery</h1>
+   
+    <div class="row">
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox1">
+                <img src="cat1.jpg" alt="Clinic Interior">
+                <div class="text-container">
+                    <h5>Willow</h5>
+                    <p>Pyometra survivor. Good job Willow! 💪</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox2">
+                <img src="cat2.jpg" alt="Veterinarian with Pet">
+                <div class="text-container">
+                    <h5>Dr. Smith with Bella</h5>
+                    <p>Dr. Smith providing care to Bella, a happy patient.</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox3">
+                <img src="cat3.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Milo and Choco</h5>
+                    <p>Milo and Choco's Gooming day.</p>
+                </div>
+            </a>
+        </div>
+ 
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox4">
+                <img src="cat4.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Feline Serum Amyloid A</h5>
+                    <p>This patient tested positive for feline coronavirus.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox5">
+                <img src="cat5.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Exotic Persian cutie catz</h5>
+                    <p>First deworming of these Exotic Persian cutie catz.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox6">
+                <img src="cat6.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Exotic Persian cutie catz</h5>
+                    <p>First deworming of these Exotic Persian cutie catz.</p>
+                </div>
+            </a>
+        </div>
+
+ 
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox7">
+                <img src="cat7.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Exotic Persian cutie catz</h5>
+                    <p>First deworming of these Exotic Persian cutie catz.</p>
+
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox8">
+                <img src="cat8.jpg" alt="Staff Team">
+                <div class="text-container">
+                  <h5>Exotic Persian cutie catz</h5>
+                    <p>First deworming of these Exotic Persian cutie catz.</p>
+
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox9">
+                <img src="cat9.jpg" alt="Staff Team">
+                <div class="text-container">
+                   <h5>Exotic Persian cutie catz</h5>
+                    <p>First deworming of these Exotic Persian cutie catz.</p>
+
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox10">
+                <img src="dog1.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Vitiligo in dogs</h5>
+                    <p> If you notice any changes in your dog's skin or hair, consult your veterinarian to rule out other potential causes.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox11">
+                <img src="dog2.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Latte</h5>
+                    <p>Latte is now HEARTWORM-FREE!!.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox12">
+                <img src="dog3.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Home Service</h5>
+                    <p>Deworming & Vaccination.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox13">
+                <img src="dog4.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Home Service</h5>
+                    <p>Deworming & Vaccination.</p>
+
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox14">
+                <img src="dog5.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Nathan</h5>
+                    <p>chilling with sunglasses.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox15">
+                <img src="dog6.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Shih Tzu puppies</h5>
+                    <p>For rehoming 🥰.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox16">
+                <img src="dog7.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Grooming Services.</h5>
+                    <p>Certain Breeds of Dogs require specific times of Grooming, like Pomeranians and Poodles they require grooming every 4-8 weeks.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox17">
+                <img src="dog8.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Grooming Services.</h5>
+                    <p>Certain Breeds of Dogs require specific times of Grooming, like Pomeranians and Poodles they require grooming every 4-8 weeks.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox18">
+                <img src="dog9.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Tagpipi's free grooming. 🐕✂️</h5>
+                    <p>Freshly groomed and feelin' good.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox19">
+                <img src="dog10.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Tagpipi's free grooming. 🐕✂️</h5>
+                    <p>Freshly groomed and feelin' good.</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox20">
+                <img src="dog11.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Neptune</h5>
+                    <p>Winks and smiles from Neptune. 😜</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox21">
+                <img src="dog12.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>MAYA </h5>
+                    <p>THIS IS MAYA (13 years old)...she just got her monthly dose of LIBRELA.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox22">
+                <img src="dog13.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Wan</h5>
+                    <p>Our Wan has graduated from his vaccines, dewormings and heartworm prevention, Yeyy! 😍</p>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox23">
+                <img src="dog14.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Prince Fifi</h5>
+                    <p>Prince Fifi, unleashing fabulousness with the bangs 😏</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox24">
+                <img src="dog15.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Emergency!!</h5>
+                    <p>Emergency Blood Transfusion</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox25">
+                <img src="dog16.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Emergency!!</h5>
+                    <p>Emergency Blood Transfusion</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox26">
+                <img src="dog17.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Prince Fifi</h5>
+                    <p>Prince Fifi, unleashing fabulousness with the bangs 😏</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox27">
+                <img src="dog18.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Whelping Assistance</h5>
+                    <p>Whelping Assistance for this cutie Pug. 😍</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox28">
+                <img src="dog19.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Emergency Blood Transfusion.</h5>
+                    <p>Referral patient all the way from Guimba.</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox29">
+                <img src="dog20.jpg" alt="Staff Team">
+                <div class="text-container">
+                     <h5>Emergency Blood Transfusion.</h5>
+                    <p>Referral patient all the way from Guimba.</p>
+
+                </div>
+            </a>
+        </div>
+ 
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox30">
+                <img src="dog21.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Deworming</h5>
+                    <p>First Deworming of Hope's babies. 😍</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox31">
+                <img src="dog22.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Emergency C-Section performed</h5>
+                    <p>Hello babies 😍</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-md-4 gallery-item">
+            <a href="#lightbox32">
+                <img src="dog23.jpg" alt="Staff Team">
+                <div class="text-container">
+                    <h5>Emergency C-Section performed</h5>
+                    <p>Hello babies 😍</p>
+                </div>
+            </a>
+        </div>
+
+
+
+
+ 
+ 
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div id="lightbox1" class="lightbox">
+    <a href="#lightbox1" class="close" title="Close">×</a>
+    <img src="cat1.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox2" class="lightbox">
+    <a href="#lightbox2" class="close" title="Close">×</a>
+    <img src="cat2.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox3" class="lightbox">
+    <a href="#lightbox3" class="close" title="Close">×</a>
+    <img src="cat3.jpg" alt="Staff Team">
+</div>
+<div id="lightbox4" class="lightbox">
+    <a href="#lightbox4" class="close" title="Close">×</a>
+    <img src="cat4.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox5" class="lightbox">
+    <a href="#lightbox5" class="close" title="Close">×</a>
+    <img src="cat5.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox6" class="lightbox">
+    <a href="#lightbox6" class="close" title="Close">×</a>
+    <img src="cat6.jpg" alt="Staff Team">
+</div>
+<div id="lightbox7" class="lightbox">
+    <a href="#lightbox7" class="close" title="Close">×</a>
+    <img src="cat7.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox8" class="lightbox">
+    <a href="#lightbox8" class="close" title="Close">×</a>
+    <img src="cat8.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox9" class="lightbox">
+    <a href="#lightbox9" class="close" title="Close">×</a>
+    <img src="cat9.jpg" alt="Staff Team">
+</div>
+<div id="lightbox10" class="lightbox">
+    <a href="#lightbox10" class="close" title="Close">×</a>
+    <img src="dog1.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox11" class="lightbox">
+    <a href="#lightbox11" class="close" title="Close">×</a>
+    <img src="dog2.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox12" class="lightbox">
+    <a href="#lightbox12" class="close" title="Close">×</a>
+    <img src="dog3.jpg" alt="Staff Team">
+</div>
+<div id="lightbox13" class="lightbox">
+    <a href="#lightbox13" class="close" title="Close">×</a>
+    <img src="dog4.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox14" class="lightbox">
+    <a href="#lightbox14" class="close" title="Close">×</a>
+    <img src="dog5.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox15" class="lightbox">
+    <a href="#lightbox15" class="close" title="Close">×</a>
+    <img src="dog6.jpg" alt="Staff Team">
+</div>
+<div id="lightbox16" class="lightbox">
+    <a href="#lightbox16" class="close" title="Close">×</a>
+    <img src="dog7.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox17" class="lightbox">
+    <a href="#lightbox17" class="close" title="Close">×</a>
+    <img src="dog8.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox18" class="lightbox">
+    <a href="#lightbox18" class="close" title="Close">×</a>
+    <img src="dog9.jpg" alt="Staff Team">
+</div>
+<div id="lightbox19" class="lightbox">
+    <a href="#lightbox19" class="close" title="Close">×</a>
+    <img src="dog10.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox20" class="lightbox">
+    <a href="#lightbox20" class="close" title="Close">×</a>
+    <img src="dog11.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox21" class="lightbox">
+    <a href="#lightbox21" class="close" title="Close">×</a>
+    <img src="dog12.jpg" alt="Staff Team">
+</div>
+<div id="lightbox22" class="lightbox">
+    <a href="#lightbox22" class="close" title="Close">×</a>
+    <img src="dog13.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox23" class="lightbox">
+    <a href="#lightbox23" class="close" title="Close">×</a>
+    <img src="dog14.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox24" class="lightbox">
+    <a href="#lightbox24" class="close" title="Close">×</a>
+    <img src="dog15.jpg" alt="Staff Team">
+</div>
+<div id="lightbox25" class="lightbox">
+    <a href="#lightbox25" class="close" title="Close">×</a>
+    <img src="dog16.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox26" class="lightbox">
+    <a href="#lightbox26" class="close" title="Close">×</a>
+    <img src="dog17.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox27" class="lightbox">
+    <a href="#lightbox27" class="close" title="Close">×</a>
+    <img src="dog18.jpg" alt="Staff Team">
+</div>
+<div id="lightbox28" class="lightbox">
+    <a href="#lightbox28" class="close" title="Close">×</a>
+    <img src="dog19.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox29" class="lightbox">
+    <a href="#lightbox29" class="close" title="Close">×</a>
+    <img src="dog20.jpg" alt="Veterinarian with Pet">
+</div>
+<div id="lightbox30" class="lightbox">
+    <a href="#lightbox30" class="close" title="Close">×</a>
+    <img src="dog21.jpg" alt="Staff Team">
+</div>
+<div id="lightbox31" class="lightbox">
+    <a href="#lightbox31" class="close" title="Close">×</a>
+    <img src="dog22.jpg" alt="Clinic Interior">
+</div>
+<div id="lightbox32" class="lightbox">
+    <a href="#lightbox32" class="close" title="Close">×</a>
+    <img src="dog23.jpg" alt="Veterinarian with Pet">
+</div>
+
+
+<footer class="footer mt-5">
+    <p>&copy; 2025 Mustangs Veterinary Clinic | All Rights Reserved</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
